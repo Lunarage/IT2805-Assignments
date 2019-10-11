@@ -1,0 +1,11 @@
+1.
+Auto play on videos is disabled on mobile devices to prevent the unwanted use of cellular data.
+
+2.
+It will not be affected by the code within the @media block. Only resolutions with width between 768px and 1024px are affected by the code in the block.
+
+3.
+Having multiple versions of the same website means you have to write the same webpages multiple times.
+Writing a single responsive website means you don't have to repeat yourself.
+Another advantage of a single site is that you have fewer files/systems to keep track of.
+E.g. The structure of the pages are essentially the same on mobile and desktop.

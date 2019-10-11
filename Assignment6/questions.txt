@@ -1,0 +1,5 @@
+1. Because of rounding errors 0.1 + 0.2 != 0.3 in javascript.
+2. The method attribute specifies which method of transmission to use when sending the from data. The most common methods are POST and GET.
+3. When using the GET method, the HTTP request that is sent has an empty body, and the data sent to the server is appended to the URL.
+4. Even with client side validation (HTML5 and javascript) the user can still alter the request sent to the server. Thus you should always do server side validation.
+5. textarea is appropriate when you expect a longer string of text that spans multiple lines. A comment field, a review, or a tweet are some examples.

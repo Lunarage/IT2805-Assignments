@@ -1,0 +1,64 @@
+body {
+    background: #222;
+    color: #CCE;
+}
+
+form {
+    display: grid;
+    grid-template-columns: [start] auto [center] auto [end];
+
+    max-width: 720px;
+    margin: auto;
+}
+
+form > h1 {
+    grid-column-start: start;
+    grid-column-end: end;
+    text-align: center;
+    font-size: 3em;
+}
+
+form > label {
+    grid-column-start: start;
+    grid-column-end: center;
+    align-self: center;
+
+    font-size: 1.5em;
+    margin: 5px 10px;
+    text-align: right;
+}
+
+input, select {
+    font-size: 1.5em;
+    border-radius: 5px;
+    margin: 10px 3px;
+    padding: 10px 5px;
+}
+
+input {
+    background: #EEE;
+}
+
+input[readonly]{
+    background: #CCC;
+}
+
+input[type=submit]{
+    grid-column-start: start;
+    grid-column-end: end;
+    place-self: center;
+
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    width: fit-content;
+}
+
+input:invalid {
+    border: solid red 2px;
+}
+
+input:valid {
+    border: solid transparent 2px;
+}

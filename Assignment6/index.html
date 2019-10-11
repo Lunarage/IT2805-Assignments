@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <title>Tax form</title>
+        <meta charset='utf-8' />
+        <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+        <link rel='stylesheet' type='text/css' href='style.css' />
+    <script>
+        function calculateTax(){
+            let income = document.getElementById('income').value;
+            let wealth = document.getElementById('wealth').value;
+            let tax = (0.35*income)+(0.25*wealth);
+            document.getElementById('tax').value = tax;
+        }
+    </script>
+    </head>
+    <body>
+        <form action='http://folk.ntnu.no/michaedm/norwegian-tax-administration/receive.php' method='post'>
+            <h1>Tax Form</h1>
+            <label for='name'>Real Name</label>
+            <input name='name' id='name' type='text' pattern='[a-zA-Z]*' required />
+            <label for='gender'>Gender</label>
+            <select name='gender' id='gender'>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+            <label for='email'>E-mail</label>
+            <input name='email' id='email' type='email' required />
+            <label for='birthdate'>Birthdate</label>
+            <input name='birthdate' id='birthdate' type='date' max='1987-12-31' required/>
+            <label for='hero'>Hero name</label>
+            <input name='hero' id='hero' type='text' required />
+            <label for='spandex'>Do you wear spandex?</label>
+            <select name='spandex' id='spandex'>
+                <option value='True'>Yes</option>
+                <option value='False'>No</option>
+            </select>
+            <label for='strength'>Strength</label>
+            <input name='strength' id='strength' type='number' value='5' min='1' max='10' required />
+            <label for='speed'>Speed</label>
+            <input name='speed' id='speed' type='number' value='5' min='1' max='10' required />
+            <label for='intelligence'>Intelligence</label>
+            <input name='intelligence' id='intelligence' type='number' value='5' min='1' max='10' required />
+            <label for='income'>Income</label>
+            <input name='income' id='income' type='number' min='1' onKeyUp='calculateTax()' required />
+            <label for='wealth'>Wealth</label>
+            <input name='wealth' id='wealth' type='number' min='1' onKeyUp='calculateTax()' required />
+            <label for='tax'>Tax</label>
+            <input name='tax' id='tax' type='number' readonly />
+            <input type='submit' value='Submit tax form'/>
+        </form>
+    </body>
+</html>

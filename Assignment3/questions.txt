@@ -1,0 +1,2 @@
+1. absolute position is relative to its nearest position (non-static) parent while fixed position is relative to the viewport.
+2. element:n-th-chld(3)
