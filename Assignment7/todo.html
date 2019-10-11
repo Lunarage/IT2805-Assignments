@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>TODO</title>
+    <script src="todo.js" type='text/javascript'></script>
+    <style = 'text/css'>
+    body{
+        background: #222;
+        padding: 20px;
+    }
+
+    h1{
+        color:#EA0;
+    }
+
+    input[type=text], button{
+        background: #DDD;
+        color: #333;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid;
+    }
+
+    output{
+        color: #EEE;
+    }
+
+    ul{
+        list-style: none;
+        color: #EEE;
+        max-width: 800px;
+    }
+
+    li{
+        margin: 10px 0;
+    }
+
+    li>span{
+        display: inline-block;
+        overflow-wrap: break-word;
+        max-width: 100%;
+    }
+
+    input[type=checkbox]:checked + span{
+        text-decoration: line-through;
+        color: #AAA;
+    }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>TODO-List</h1>
+        <input id='newTask' type='text' placeholder='New Task' autofocus
+               onKeyPress='if(event.key == "Enter"){addTask();}' />
+        <button type='button' onClick='addTask()'>Add Task</button>
+        <output id='completedField'></output>
+        <ul id='todoList'>
+        </ul>
+    </section>
+</body>
+</html>
