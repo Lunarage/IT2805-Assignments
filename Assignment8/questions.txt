@@ -1,0 +1,18 @@
+1. Calling getContext('webgl') or getContext('webgl2'). webgl2 is not widely supported.
+    WebGL (Web Graphics Library) is an API that closely conforms to OpenGL for Embedded Systems (OpenGL ES) 2.0.
+    OpenGL is itself an API used to draw vector graphics, typically used to interact with the GPU to achieve hardware-accelerated graphics.
+
+2. Assuming context is an instance of CanvasRenderingContext2D.
+    context.beginPath();
+    context.arc(x,y,r,0,2*PI);
+    //x, y being coordinates for the center of the circle.
+    //r being the radius of the circle.
+    //0, 2*PI is the starting and stopping angle respectively.
+    context.fillStyle('#0000FF');
+    context.fill();
+
+3.
+    const countries = ['Norway', 'Sweden', 'Denmark', 'New Zealand'];
+    const countiesStartingWithN = countries.filter(function(country){
+        return country.startsWith('N');
+    });
