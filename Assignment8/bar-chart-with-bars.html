@@ -47,26 +47,38 @@
             }
 
             for(let i = 1; i<=10; i++){
+                //Subtract from the height of the canvas
+                //because we count from the top and not the bottom
                 let y = 550-i*50;
                 drawLineWithText(i*100000,50,y,580,y);
             }
 
+            //Draw the legend
             drawRectangleWithText("Income",600,50,50,25,"#FF0000");
             drawRectangleWithText("Wealth",600,80,50,25,"#0000FF");
 
+            //Some constants
             let padding = 4;
+            //Offset to the start of the lines
             let offset = 50 + padding;
+            //The width of the lines
             let totalWidth = 580-50;
+            //Find the width of the columns such that each entry in taxForms get three columns
+            //One for spacing, one for income and one for wealth
             let columnWidth = (totalWidth/(3*taxForms.length+1))-(2*padding);
+            //Calculate the starting x-position of each column
             let columns=[]
+            //Create 3 columns for each entry in taxForms
             for(let i = 0; i<3*taxForms.length; i++){
                 columns.push(offset+(columnWidth+2*padding)*i);
             }
             let col = 0;
             taxForms.forEach(function(person){
+                //500 is the number of pixels
+                //to the height of the 1 000 000 line
                 incomeHeight = person.income*500/1000000;
                 wealthHeight = person.wealth*500/1000000;
-                col++;
+                col++; //1 Column spacing
                 drawRectangle(columns[col],550-incomeHeight,columnWidth,incomeHeight,"#FF0000");
                 col++;
                 drawRectangle(columns[col],550-wealthHeight,columnWidth,wealthHeight,"#0000FF");
